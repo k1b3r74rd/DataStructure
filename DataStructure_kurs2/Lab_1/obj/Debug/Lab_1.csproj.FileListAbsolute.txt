@@ -1,0 +1,8 @@
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\bin\Debug\Lab_1.exe.config
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\bin\Debug\Lab_1.exe
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\bin\Debug\Lab_1.pdb
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\obj\Debug\Lab_1.csproj.AssemblyReference.cache
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\obj\Debug\Lab_1.csproj.SuggestedBindingRedirects.cache
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\obj\Debug\Lab_1.csproj.CoreCompileInputs.cache
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\obj\Debug\Lab_1.exe
+G:\0.PROJECTS\C#\TUSUR\DataStructure_kurs2\Lab_1\obj\Debug\Lab_1.pdb
