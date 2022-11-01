@@ -28,7 +28,7 @@ for j in range(100, 0, -1):
     arr2.append(j)
 
 
-def comb(data):
+def comb(data, *args):
     """
     Сортировка расчёской.
     """
@@ -36,52 +36,52 @@ def comb(data):
     gap = len(data)
     swaps = True
     while gap > 1 or swaps:
-        # count_comb += 1
         gap = max(1, int(gap / 1.25))
         swaps = False
         for i in range(len(data) - gap):
             j = i + gap
+            count_comb += 1
             if data[i] > data[j]:
                 count_comb += 1
                 data[i], data[j] = data[j], data[i]
                 swaps = True
-            else:
-                count_comb += 1
     print(count_comb, end=' ')
     return data
 
 
-def quick(data):
+count_quick = 0
+
+
+def quick(data, *args):
     """
     Быстрая сортировка. Для вычисления количества операций прибегнуть к Excel.
     """
+    global count_quick
     less = []
     pivotList = []
     more = []
-    c=0
     if len(data) <= 1:
-        c+=1
         return data
     else:
-        pivot = data[0]
-        c+=1
+        pivot = data[(len(data) // 2)]
         for i in data:
             if i < pivot:
                 less.append(i)
-                c+=1
+                count_quick += 1
             elif i > pivot:
                 more.append(i)
-                c+=1
+                count_quick += 1
             else:
                 pivotList.append(i)
-                c+=1
+                count_quick += 1
+
         less = quick(less)
         more = quick(more)
-        print(c, end=' ')
+        print(count_quick, end=' ')
         return less + pivotList + more
 
 
-def bubble(data):
+def bubble(data, *args):
     """
     Сортировка обменом/пузырьком.
     """
@@ -89,11 +89,9 @@ def bubble(data):
     for i in range(0, len(data) - 1):
         count_bubble += 1
         for j in range(i+1, len(data) - 1):
-            count_bubble += 1
             if data[i] > data[j]:
                 data[i], data[j] = data[j], data[i]
                 count_bubble += 1
-    print(count_bubble, end=' ')
     return data
 
 
@@ -102,8 +100,9 @@ def timedelta(func):
     Вычисление затраченного времени.
     """
     for elem in arrays2:
+        count_quick = 0
         a = datetime.datetime.now()
-        func(elem)
+        func(elem, count_quick)
         b = datetime.datetime.now()
         c = b - a
         print(len(elem), c)
@@ -112,6 +111,6 @@ def timedelta(func):
 
 if __name__ == '__main__':
     # При запуске функции, остальные комментировать. Для каждого задания в def timedelta менять используемые массивы.
-    timedelta(comb)
-    # timedelta(quick)
+    # timedelta(comb)
+    timedelta(quick)
     # timedelta(bubble)
