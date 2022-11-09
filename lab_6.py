@@ -37,8 +37,19 @@ for k in range(N):  # Меняем -1 на "объездной путь"
         for j in range(N):
             if graph[i][j] == -1:
                 graph[i][j] = graph[i][k] + graph[k][j]
+                graph[j][i] = graph[i][j]
 
-print('\nОтредактированный граф: ')
+print('\nПредварительный граф: ')
+for row in graph:  # Вывод матрицы.
+    print(row)
+
+for k in range(N):  # Алгоритм Флойда-Уоршелла
+    for i in range(N):
+        for j in range(N):
+            graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
+            graph[j][i] = graph[i][j]
+
+print('\nОкончательный граф: ')
 for row in graph:  # Вывод матрицы.
     print(row)
 
